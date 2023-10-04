@@ -1,5 +1,5 @@
 module "vpn_sg" {
-  source = "../../terraform-securitygroup"
+  source = "git::https://github.com/chandrasekharyv/terraform-securitygroup.git"
   project_name = var.project_name
   sg_name = var.sg_name
   sg_description = var.sg_description
