@@ -1,0 +1,43 @@
+pipeline {
+    agent {
+        node {
+           label 'Agent'
+        }
+        
+    }
+    options {
+        ansiColor('xterm')
+    }
+
+    stages {
+        stage('Init') {
+            steps {
+                sh'''
+                    terraform init
+
+                '''
+            }
+        }
+        stage('Plan') {
+            steps {
+                sh'''
+                    terraform plan
+
+                '''
+            }
+        }
+        
+    }
+
+    post { 
+        always { 
+            echo 'I will always run job is success or not !'
+        }
+        success {
+            echo 'i will run when the job is success'
+        }
+        failure {
+            echo 'it will run when job is failure'
+        }
+    }
+}
