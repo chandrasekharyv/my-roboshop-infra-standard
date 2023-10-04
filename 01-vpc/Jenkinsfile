@@ -13,6 +13,9 @@ pipeline {
         stage('Init') {
             steps {
                 sh'''
+                    ls -ltr
+                    pwd
+                    cd 01-vpc
                     terraform init
 
                 '''
@@ -21,6 +24,9 @@ pipeline {
         stage('Plan') {
             steps {
                 sh'''
+                    ls -ltr
+                    pwd
+                    cd 01-vpc
                     terraform plan
 
                 '''
