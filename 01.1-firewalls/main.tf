@@ -1,5 +1,5 @@
 module "vpn_sg" {
-  source = "../../terraform-securitygroup"
+  source = "git::https://github.com/chandrasekharyv/terraform-securitygroup.git"
   project_name = var.project_name
   sg_name = "roboshop-vpn"
   sg_description = "allowing traffic"
@@ -15,7 +15,7 @@ module "vpn_sg" {
 }
 
 module "mongodb_sg" {
-  source = "../../terraform-securitygroup"
+  source = "git::https://github.com/chandrasekharyv/terraform-securitygroup.git"
   project_name = var.project_name
   sg_name = "mongodb"
   sg_description = "allowing traffic"
@@ -31,7 +31,7 @@ module "mongodb_sg" {
 }
 
 module "catalogue_sg" {
-  source = "../../terraform-securitygroup"
+  source = "git::https://github.com/chandrasekharyv/terraform-securitygroup.git"
   project_name = var.project_name
   sg_name = "catalogue"
   sg_description = "allow all traffic"
@@ -47,7 +47,7 @@ module "catalogue_sg" {
 }
 
 module "web_sg" {
-  source = "../../terraform-securitygroup"
+  source = "git::https://github.com/chandrasekharyv/terraform-securitygroup.git"
   project_name = var.project_name
   sg_name = "web"
   sg_description = "allow all traffic"
@@ -63,7 +63,7 @@ module "web_sg" {
 }
 
 module "app_alb_sg" {
-  source = "../../terraform-securitygroup"
+  source = "git::https://github.com/chandrasekharyv/terraform-securitygroup.git"
   project_name = var.project_name
   sg_name = "App-ALB"
   sg_description = "allow all traffic"
@@ -79,7 +79,7 @@ module "app_alb_sg" {
 }
 
 module "web_alb_sg" {
-  source = "../../terraform-securitygroup"
+  source = "git::https://github.com/chandrasekharyv/terraform-securitygroup.git"
   project_name = var.project_name
   sg_name = "Web-ALB"
   sg_description = "allow all traffic"
