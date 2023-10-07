@@ -10,6 +10,9 @@ data "aws_ssm_parameter" "database_subnet_ids" {
   name = "/${var.project_name}/${var.env}/database_subnet_ids"
 }
 
+data "aws_ssm_parameter" "mongodb_sg_id" {
+  name = "/${var.project_name}/${var.env}/mongodb_sg_id"
+}
 
 data "aws_vpc" "default" {
   default = true
